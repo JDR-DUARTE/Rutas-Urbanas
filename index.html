@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>transporte</title>
+    <script src="libs/cytoscape.min.js"></script>
+</head>
+<body>
+    <header class='cabecera'>
+        <div class='logo'>
+            <img src="assets/logo.png" alt="Logo de la empresa">
+        </div>
+        <div class='botones-nav'>
+            <input type="file" id="archivo" class="oculto" accept=".txt">
+            <label for="archivo">Seleccionar Archivo</label>
+        </div>
+    </header>
+
+    <div class='tituloP'>Bienvenido al <br>
+        <span class="sangrado">Sistema de Análisis de Rutas</span>
+     </div>
+    <main>
+        <div class='cont izq'>
+            <div class='cont-totales'>
+                <div class='tNodos' id='tNodos'>
+                    <div class='logo-circulo'>
+                        <img src="assets/nodo.png" alt="icono" />
+                    </div>
+                    <div class='texto'>
+                        <span class='numero' id='numE'></span>
+                        <span class='titulo'>Total de Estaciones</span>
+                    </div>
+                </div>
+                <div class='tNodos' id='tNodos'>
+                    <div class='logo-circulo'>
+                          <img src="assets/ruta.png" alt="icono" />
+                    </div>
+                    <div class='texto'>
+                        <span class='numero' id='numR'></span>
+                        <span class='titulo'>Total de Rutas</span>
+                    </div>
+                </div>
+                
+            </div>
+            <div class='grafo' >
+            <div class='fondo'></div>
+                <div class='conten-grafo' id="grafoContainer">
+                </div>
+            </div>
+        </div>
+
+
+        <div class='cont archP '>
+            <div id="tituloR" class="titulo-archivo" style="display: none;">
+                Archivo cargado:
+            </div>
+            <div class='arch'>
+                
+                    <div  class='texto'id=mensajeInicial>
+                        Sube un archivo .txt para visualizar el<br>
+                        el mapa de rutas dandole click al boton Seleccionar Archivo
+                    </div>
+                    <div class='contenidoA' id='contArch'></div>
+            
+            </div>
+            <div class='titulo-archivo' id='tituloRC' style="display: none">Ruta Óptima</div>
+            <div class='rutaC' id="rutaC" style="display:none">
+            
+             </div>
+        </div>
+
+         <div class='cont selectP '>
+            <div id="tituloA" class="titulo-archivo" style="display: none;">
+                Busca la Ruta:
+            </div>
+            <div class='selectores'>
+                    <div class='texto' id='mensajeR'>
+                        Primero sube el archivo<br>
+                        Luego selecciona estación de origen y destino.<br>
+                    </div>
+                    <select id="origen" class="entrada">
+                        <option value="">Estación de origen</option>
+                    </select>
+                    <select id="destino" class="entrada">
+                        <option value="">Estación de destino</option>
+                    </select>
+                    <button id="buscarRuta" class="boton-a">Buscar Ruta</button>
+                    <button id="descargar" class="boton-a" style="display:none" >Descargar Archivo</button>
+            </div>
+        </div>
+    </main>
+    <script src="transporte_urbano.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
